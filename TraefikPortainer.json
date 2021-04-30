@@ -26,7 +26,69 @@
                     "default": "private internet access",
                     "label": "VPNSP",
                     "name": "VPNSP",
-                    "select": ["cyberghost","fastestvpn","hidemyass","mullvad","nordvpn","privado","pia","private internet access","privatevpn","protonvpn","purevpn","surfshark","torguard","vyprvpn","windscribe"]
+                    "select": [
+                        {
+                            "text": "cyberghost",
+                            "value": "cyberghost"
+                        },
+                        {
+                            "text": "fastestvpn",
+                            "value": "fastestvpn"
+                        },
+                        {
+                            "text": "hidemyass",
+                            "value": "hidemyass"
+                        },
+                        {
+                            "text": "mullvad",
+                            "value": "mullvad"
+                        },
+                        {
+                            "text": "nordvpn",
+                            "value": "nordvpn"
+                        },
+                        {
+                            "text": "privado",
+                            "value": "privado"
+                        },
+                        {
+                            "text": "pia",
+                            "value": "pia"
+                        },
+                        {
+                            "text": "private internet access",
+                            "value": "private internet access",
+                            "default": true
+                        },
+                        {
+                            "text": "privatevpn",
+                            "value": "privatevpn"
+                        },
+                        {
+                            "text": "protonvpn",
+                            "value": "protonvpn"
+                        },
+                        {
+                            "text": "purevpn",
+                            "value": "purevpn"
+                        },
+                        {
+                            "text": "surfshark",
+                            "value": "surfshark"
+                        },
+                        {
+                            "text": "torguard",
+                            "value": "torguard"
+                        },
+                        {
+                            "text": "vyprvpn",
+                            "value":"vyprvpn"
+                        },
+                        {
+                            "text": "windscribe",
+                            "value": "windscribe"
+                        }
+                    ]
                 },
                 {
                     "default": "REGION",
