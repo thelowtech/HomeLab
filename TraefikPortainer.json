@@ -3,8 +3,8 @@
     "templates": [
         {
             "type": 1,
-            "title": "gluetun",
-            "name": "Gluetun",
+            "title": "Gluetun",
+            "name": "gluetun",
             "platform": "linux",
             "image": "qmcgaw/gluetun",
             "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
@@ -122,8 +122,8 @@
         },
         {
             "type": 1,
-            "title": "qbittorrent",
-            "name": "qBluetun",
+            "title": "qBittorrent",
+            "name": "qbluetun",
             "platform": "linux",
             "image": "ghcr.io/linuxserver/qbittorrent",
             "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
