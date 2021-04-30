@@ -173,8 +173,8 @@
             "platform": "linux",
             "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
             "repository": {
-              "url": "https://github.com/thelowtech/HomeLabTraefikPortainer",
-              "stackfile": "Gluetun-qBittorrent-Jacket.yml"
+              "url": "https://github.com/thelowtech/HomeLab",
+              "stackfile": "TraefikPortainer/Gluetun-qBittorrent-Jacket.yml"
             }
           }
     ]
