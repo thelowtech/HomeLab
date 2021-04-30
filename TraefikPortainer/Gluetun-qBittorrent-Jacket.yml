@@ -1,0 +1,58 @@
+---
+version: "3.7"
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: Gluten
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - VPNSP=private internet access
+      - REGION=US Houston
+      - OPENVPN_USER=CHANGEME
+      - OPENVPN_PASSWORD=CHANGEME
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 8080:8080
+      - 9117:9117
+    cap_add:
+      - NET_ADMIN
+    networks:
+      - proxy
+    restart: unless-stopped
+
+  qbittorrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    container_name: qBittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - WEBUI_PORT=8080
+    volumes:
+      - /opt/volumes2/configs/qbittorrent:/config
+      - /opt/volumes2/downloads:/downloads
+    depends_on:
+      - "gluetun"
+    network_mode: "service:gluetun"
+    restart: unless-stopped
+
+  jackett:
+    image: linuxserver/jackett
+    container_name: Jackett
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /opt/volumes2/configs/jackett:/config
+      - /opt/volumes2/downloads:/downloads
+    depends_on:
+      - "gluetun"
+    network_mode: "service:gluetun"
+    restart: unless-stopped
+networks:
+  proxy:
+    external: true
