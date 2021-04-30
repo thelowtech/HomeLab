@@ -8,14 +8,14 @@
 			"description": "Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy",
 			"env": [
                 {
-					"default": "PUID",
-					"label": "1000",
-					"name": "1000"
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
 				},
                 {
-					"default": "PGID",
-					"label": "1000",
-					"name": "1000"
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
 				},
                 {
 					"default": "America/Chicago",
