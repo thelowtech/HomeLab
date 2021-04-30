@@ -1,0 +1,65 @@
+{
+	"version": "3.7",
+	"templates": [
+		{
+			"categories": [
+				"VPN"
+			],
+			"description": "Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy",
+			"env": [
+                {
+					"default": "PUID",
+					"label": "1000",
+					"name": "1000"
+				},
+                {
+					"default": "PGID",
+					"label": "1000",
+					"name": "1000"
+				},
+                {
+					"default": "America/Chicago",
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"default": "private internet access",
+					"label": "VPNSP",
+					"name": "VPNSP"
+				},
+				{
+					"default": "REGION",
+					"label": "US Houston",
+					"name": "US Houston"
+				},
+                {
+					"default": "CHANGEME",
+					"label": "OPENVPN_USER",
+					"name": "OPENVPN_USER"
+				},
+                {
+					"default": "CHANGEME",
+					"label": "OPENVPN_PASSWORD",
+					"name": "OPENVPN_PASSWORD"
+				}
+			],
+			"image": "qmcgaw/gluetun",
+			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/airsonic-logo.png",
+			"name": "gluetun",
+			"platform": "linux",
+			"restart_policy": "unless-stopped",
+			"title": "Gluetun",
+			"type": 1,
+            "network": "proxy",
+            "cap_add": [
+                "NET_ADMIN"
+            ],
+			"volumes": [
+				{
+					"bind": "/opt/volumes/config/gluten/",
+					"container": "/config"
+				}
+            ]
+		}
+    ]
+}
