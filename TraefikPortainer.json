@@ -1,65 +1,66 @@
 {
-	"version": "2",
-	"templates": [
-		{
-			"categories": [
-				"VPN"
-			],
-			"description": "Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy",
-			"env": [
+    "version": "2",
+    "templates": [
+        {
+            "categories": [
+                "VPN"
+            ],
+            "description": "Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy",
+            "env": [
                 {
-					"default": "1000",
-					"label": "PUID",
-					"name": "PUID"
-				},
+                    "default": "PUID",
+                    "label": "1000",
+                    "name": "1000"
+                },
                 {
-					"default": "1000",
-					"label": "PGID",
-					"name": "PGID"
-				},
+                    "default": "PGID",
+                    "label": "1000",
+                    "name": "1000"
+                },
                 {
-					"default": "America/Chicago",
-					"label": "TZ",
-					"name": "TZ"
-				},
-				{
-					"default": "private internet access",
-					"label": "VPNSP",
-					"name": "VPNSP"
-				},
-				{
-					"default": "US Houston",
-					"label": "REGION",
-					"name": "REGION"
-				},
+                    "default": "America/Chicago",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
                 {
-					"default": "CHANGEME",
-					"label": "OPENVPN_USER",
-					"name": "OPENVPN_USER"
-				},
+                    "default": "private internet access",
+                    "label": "VPNSP",
+                    "name": "VPNSP",
+                    "select": ["cyberghost","fastestvpn","hidemyass","mullvad","nordvpn","privado","pia","private internet access","privatevpn","protonvpn","purevpn","surfshark","torguard","vyprvpn","windscribe"]
+                },
                 {
-					"default": "CHANGEME",
-					"label": "OPENVPN_PASSWORD",
-					"name": "OPENVPN_PASSWORD"
-				}
-			],
-			"image": "qmcgaw/gluetun",
-			"logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
-			"name": "gluetun",
-			"platform": "linux",
-			"restart_policy": "unless-stopped",
-			"title": "Gluetun",
-			"type": 1,
+                    "default": "REGION",
+                    "label": "US Houston",
+                    "name": "US Houston"
+                },
+                {
+                    "default": "CHANGEME",
+                    "label": "OPENVPN_USER",
+                    "name": "OPENVPN_USER"
+                },
+                {
+                    "default": "CHANGEME",
+                    "label": "OPENVPN_PASSWORD",
+                    "name": "OPENVPN_PASSWORD"
+                }
+            ],
+            "image": "qmcgaw/gluetun",
+            "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/airsonic-logo.png",
+            "name": "gluetun",
+            "platform": "linux",
+            "restart_policy": "unless-stopped",
+            "title": "Gluetun",
+            "type": 1,
             "network": "proxy",
             "cap_add": [
                 "NET_ADMIN"
             ],
-			"volumes": [
-				{
-					"bind": "/opt/volumes/config/gluten/",
-					"container": "/config"
-				}
+            "volumes": [
+                {
+                    "bind": "/opt/volumes/config/gluten/",
+                    "container": "/config"
+                }
             ]
-		}
+        }
     ]
 }
