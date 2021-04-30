@@ -8,14 +8,14 @@
             "description": "Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy",
             "env": [
                 {
-                    "default": "PUID",
-                    "label": "1000",
-                    "name": "1000"
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
                 },
                 {
-                    "default": "PGID",
-                    "label": "1000",
-                    "name": "1000"
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
                 },
                 {
                     "default": "America/Chicago",
@@ -91,9 +91,9 @@
                     ]
                 },
                 {
-                    "default": "REGION",
-                    "label": "US Houston",
-                    "name": "US Houston"
+                    "default": "US Houston",
+                    "label": "REGION",
+                    "name": "REGION"
                 },
                 {
                     "default": "CHANGEME",
@@ -107,8 +107,8 @@
                 }
             ],
             "image": "qmcgaw/gluetun",
-            "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/airsonic-logo.png",
-            "name": "gluetun",
+            "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
+            "name": "Gluetun",
             "platform": "linux",
             "restart_policy": "unless-stopped",
             "title": "Gluetun",
