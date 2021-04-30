@@ -114,9 +114,7 @@
             "title": "Gluetun",
             "type": 1,
             "network": "proxy",
-            "cap_add": [
-                "NET_ADMIN"
-            ],
+            "privileged": true,
             "volumes": [
                 {
                     "bind": "/opt/volumes/config/gluten/",
