@@ -44,7 +44,7 @@
 				}
 			],
 			"image": "qmcgaw/gluetun",
-			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/airsonic-logo.png",
+			"logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
 			"name": "gluetun",
 			"platform": "linux",
 			"restart_policy": "unless-stopped",
