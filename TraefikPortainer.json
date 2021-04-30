@@ -28,9 +28,9 @@
 					"name": "VPNSP"
 				},
 				{
-					"default": "REGION",
-					"label": "US Houston",
-					"name": "US Houston"
+					"default": "US Houston",
+					"label": "REGION",
+					"name": "REGION"
 				},
                 {
 					"default": "CHANGEME",
