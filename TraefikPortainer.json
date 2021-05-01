@@ -228,6 +228,52 @@
             ]
         },
         {
+            "type": 1,
+            "title": "Radarr",
+            "name": "radarr",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/radarr",
+            "logo": "hhttps://github.com/thelowtech/HomeLab/blob/baafc6db6aa5975303dfba055c5a85b6d62a2ff1/Images/radarr.png",
+            "description": "Radarr is a movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.",
+            "categories": ["Downloaders", "Video", "Movies"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "ports": [
+                "7878:7878"
+            ],
+            "env": [
+                {
+                    "default": "America/Chicago",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes3/configs/radarr",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/opt/volumes3/storage/movies",
+                    "container": "/movies"
+                },
+                {
+                    "bind": "/opt/volumes3/storage/downloads/movies",
+                    "container": "/downloads/"
+                }
+            ]
+        },
+        {
             "type": 3,
             "title": "Gluetun, qBittorrent, Jacket with Traefik",
             "description": "Deploys the Gluten Container. The qBittorrent and Jacket attach thir networks to the Gluden Container to use it as a VPN proxy. Designed to work with Traefik Proxy.",
