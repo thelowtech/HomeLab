@@ -5,13 +5,13 @@ services:
     image: qmcgaw/gluetun
     container_name: Gluten
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
-      - VPNSP=private internet access
-      - REGION=US Houston
-      - OPENVPN_USER=CHANGEME
-      - OPENVPN_PASSWORD=CHANGEME
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - VPNSP=${VPNSP}
+      - REGION=${REGION}
+      - OPENVPN_USER=${OPENVPN_USER}
+      - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
     ports:
       - 6881:6881
       - 6881:6881/udp
@@ -26,9 +26,9 @@ services:
     image: ghcr.io/linuxserver/qbittorrent
     container_name: qBittorrent
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
       - WEBUI_PORT=8080
     volumes:
       - /opt/volumes3/configs/qbittorrent:/config
@@ -41,9 +41,9 @@ services:
     image: linuxserver/jackett
     container_name: Jackett
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - /opt/volumes3/configs/jackett:/config
       - /opt/volumes3/downloads:/downloads
