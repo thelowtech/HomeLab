@@ -7,7 +7,7 @@
             "name": "gluetun",
             "platform": "linux",
             "image": "qmcgaw/gluetun",
-            "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/gluetun.png",
             "description": "Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy",
             "categories": ["VPN"],
             "network": "proxy",
