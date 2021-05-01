@@ -46,7 +46,7 @@ services:
       - TZ=${TZ}
     volumes:
       - /opt/volumes3/configs/jackett:/config
-      - /opt/volumes3/downloads:/downloads
+      - /opt/volumes3/downloads/blackhole:/downloads
     depends_on:
       - "gluetun"
     network_mode: "service:gluetun"
