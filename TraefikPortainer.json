@@ -195,7 +195,24 @@
                 {
                     "default": "private internet access",
                     "label": "VPNSP",
-                    "name": "VPNSP",
+                    "name": "VPNSP"
+                },
+                {
+                    "default": "US Houston",
+                    "label": "REGION",
+                    "name": "REGION"
+                },
+                {
+                    "default": "CHANGEME",
+                    "label": "OPENVPN_USER",
+                    "name": "OPENVPN_USER"
+                },
+                {
+                    "default": "CHANGEME",
+                    "label": "OPENVPN_PASSWORD",
+                    "name": "OPENVPN_PASSWORD"
+                },
+                {
                     "select": [
                         {
                             "text": "cyberghost",
@@ -259,21 +276,6 @@
                             "value": "windscribe"
                         }
                     ]
-                },
-                {
-                    "default": "US Houston",
-                    "label": "REGION",
-                    "name": "REGION"
-                },
-                {
-                    "default": "CHANGEME",
-                    "label": "OPENVPN_USER",
-                    "name": "OPENVPN_USER"
-                },
-                {
-                    "default": "CHANGEME",
-                    "label": "OPENVPN_PASSWORD",
-                    "name": "OPENVPN_PASSWORD"
                 }
             ]
         }
