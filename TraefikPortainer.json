@@ -208,6 +208,8 @@
                     "name": "OPENVPN_PASSWORD"
                 },
                 {
+                    "default": "private internet access",
+                    "label": "VPNSP",
                     "name": "VPNSP",
                     "select": [
                         {
