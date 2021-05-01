@@ -1,21 +1,120 @@
 {
-    "version": "3",
+    "version": "2",
     "templates": [
         {
-            "type": 2,
+            "type": 3,
             "title": "Gluetun, qBittorrent, Jacket",
             "description": "Jacket and qBittorrent build to work with Gluetun VPN",
             "note": "Deploys the Gluten Container. The qBittorrent and Jacket attach thir networks to the Gluden Container to use it as a VPN proxy",
-            "categories": [
-                "VPN",
-                "Downloaders"
-                ],
+            "categories": ["VPN", "Downloaders"],
             "platform": "linux",
             "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
             "repository": {
               "url": "https://github.com/thelowtech/HomeLab",
               "stackfile": "TraefikPortainer/Gluetun-qBittorrent-Jacket.yml"
-            }
+            },
+            "env": [
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "private internet access",
+                    "label": "VPNSP",
+                    "name": "VPNSP"
+                },
+                {
+                    "default": "US Houston",
+                    "label": "REGION",
+                    "name": "REGION"
+                },
+                {
+                    "default": "CHANGEME",
+                    "label": "OPENVPN_USER",
+                    "name": "OPENVPN_USER"
+                },
+                {
+                    "default": "CHANGEME",
+                    "label": "OPENVPN_PASSWORD",
+                    "name": "OPENVPN_PASSWORD"
+                },
+                {
+                    "select": [
+                        {
+                            "text": "cyberghost",
+                            "value": "cyberghost"
+                        },
+                        {
+                            "text": "fastestvpn",
+                            "value": "fastestvpn"
+                        },
+                        {
+                            "text": "hidemyass",
+                            "value": "hidemyass"
+                        },
+                        {
+                            "text": "mullvad",
+                            "value": "mullvad"
+                        },
+                        {
+                            "text": "nordvpn",
+                            "value": "nordvpn"
+                        },
+                        {
+                            "text": "privado",
+                            "value": "privado"
+                        },
+                        {
+                            "text": "pia",
+                            "value": "pia"
+                        },
+                        {
+                            "text": "private internet access",
+                            "value": "private internet access",
+                            "default": true
+                        },
+                        {
+                            "text": "privatevpn",
+                            "value": "privatevpn"
+                        },
+                        {
+                            "text": "protonvpn",
+                            "value": "protonvpn"
+                        },
+                        {
+                            "text": "purevpn",
+                            "value": "purevpn"
+                        },
+                        {
+                            "text": "surfshark",
+                            "value": "surfshark"
+                        },
+                        {
+                            "text": "torguard",
+                            "value": "torguard"
+                        },
+                        {
+                            "text": "vyprvpn",
+                            "value":"vyprvpn"
+                        },
+                        {
+                            "text": "windscribe",
+                            "value": "windscribe"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
