@@ -2,6 +2,169 @@
     "version": "2",
     "templates": [
         {
+            "type": 1,
+            "title": "Gluetun",
+            "name": "gluetun",
+            "platform": "linux",
+            "image": "qmcgaw/gluetun",
+            "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
+            "description": "Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy",
+            "categories": ["VPN"],
+            "network": "proxy",
+            "privileged": true,
+            "restart_policy": "unless-stopped",
+            "env": [
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "private internet access",
+                    "label": "VPNSP",
+                    "name": "VPNSP",
+                    "select": [
+                        {
+                            "text": "cyberghost",
+                            "value": "cyberghost"
+                        },
+                        {
+                            "text": "fastestvpn",
+                            "value": "fastestvpn"
+                        },
+                        {
+                            "text": "hidemyass",
+                            "value": "hidemyass"
+                        },
+                        {
+                            "text": "mullvad",
+                            "value": "mullvad"
+                        },
+                        {
+                            "text": "nordvpn",
+                            "value": "nordvpn"
+                        },
+                        {
+                            "text": "privado",
+                            "value": "privado"
+                        },
+                        {
+                            "text": "pia",
+                            "value": "pia"
+                        },
+                        {
+                            "text": "private internet access",
+                            "value": "private internet access",
+                            "default": true
+                        },
+                        {
+                            "text": "privatevpn",
+                            "value": "privatevpn"
+                        },
+                        {
+                            "text": "protonvpn",
+                            "value": "protonvpn"
+                        },
+                        {
+                            "text": "purevpn",
+                            "value": "purevpn"
+                        },
+                        {
+                            "text": "surfshark",
+                            "value": "surfshark"
+                        },
+                        {
+                            "text": "torguard",
+                            "value": "torguard"
+                        },
+                        {
+                            "text": "vyprvpn",
+                            "value":"vyprvpn"
+                        },
+                        {
+                            "text": "windscribe",
+                            "value": "windscribe"
+                        }
+                    ]
+                },
+                {
+                    "default": "US Houston",
+                    "label": "REGION",
+                    "name": "REGION"
+                },
+                {
+                    "default": "CHANGEME",
+                    "label": "OPENVPN_USER",
+                    "name": "OPENVPN_USER"
+                },
+                {
+                    "default": "CHANGEME",
+                    "label": "OPENVPN_PASSWORD",
+                    "name": "OPENVPN_PASSWORD"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes3/config/gluten/",
+                    "container": "/config"
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "title": "qBittorrent",
+            "name": "qbluetun",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/qbittorrent",
+            "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
+            "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent.",
+            "categories": ["Downloaders"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "env": [
+                {
+                    "default": "8080",
+                    "label": "WEBUI_PORT",
+                    "name": "WEBUI_PORT"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes3/configs/qbittorrent",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/opt/volumes3/storage/downloads",
+                    "container": "/downloads"
+                }
+            ]
+        },
+        {
             "type": 3,
             "title": "Gluetun, qBittorrent, Jacket",
             "description": "Jacket and qBittorrent build to work with Gluetun VPN",
