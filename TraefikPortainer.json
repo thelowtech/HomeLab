@@ -193,11 +193,6 @@
                     "name": "TZ"
                 },
                 {
-                    "default": "private internet access",
-                    "label": "VPNSP",
-                    "name": "VPNSP"
-                },
-                {
                     "default": "US Houston",
                     "label": "REGION",
                     "name": "REGION"
@@ -213,6 +208,7 @@
                     "name": "OPENVPN_PASSWORD"
                 },
                 {
+                    "name": "VPNSP",
                     "select": [
                         {
                             "text": "cyberghost",
