@@ -22,3 +22,35 @@ services:
     networks:
       - proxy
     restart: unless-stopped
+  qbittorrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    container_name: qBittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - WEBUI_PORT=8080
+    volumes:
+      - /opt/volumes3/configs/qbittorrent:/config
+      - /opt/volumes3/downloads:/downloads
+    depends_on:
+      - "gluetun"
+    network_mode: "service:gluetun"
+    restart: unless-stopped
+  jackett:
+    image: linuxserver/jackett
+    container_name: Jackett
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /opt/volumes3/configs/jackett:/config
+      - /opt/volumes3/downloads:/downloads
+    depends_on:
+      - "gluetun"
+    network_mode: "service:gluetun"
+    restart: unless-stopped
+networks:
+  proxy:
+    external: true
