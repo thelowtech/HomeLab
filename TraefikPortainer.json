@@ -229,15 +229,15 @@
         },
         {
             "type": 3,
-            "title": "Gluetun, qBittorrent, Jacket",
-            "description": "Jacket and qBittorrent build to work with Gluetun VPN",
-            "note": "Deploys the Gluten Container. The qBittorrent and Jacket attach thir networks to the Gluden Container to use it as a VPN proxy",
+            "title": "Gluetun, qBittorrent, Jacket with Traefik",
+            "description": "Deploys the Gluten Container. The qBittorrent and Jacket attach thir networks to the Gluden Container to use it as a VPN proxy. Designed to work with Traefik Proxy.",
+            "notes": "Requires an update to the Traefik config.yml see example on github https://github.com/thelowtech/HomeLab",
             "categories": ["VPN", "Downloaders"],
             "platform": "linux",
             "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
             "repository": {
               "url": "https://github.com/thelowtech/HomeLab",
-              "stackfile": "TraefikPortainer/Gluetun-qBittorrent-Jacket.yml"
+              "stackfile": "TraefikPortainer/Stacks/Gluetun-qBittorrent-Jacket.yml"
             },
             "env": [
                 {
