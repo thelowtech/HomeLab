@@ -274,6 +274,52 @@
             ]
         },
         {
+            "type": 1,
+            "title": "Sonarr",
+            "name": "sonarr",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/sonarr",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/sonarr.png",
+            "description": "Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+            "categories": ["Downloaders", "Video", "TV"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "ports": [
+                "8989:8989"
+            ],
+            "env": [
+                {
+                    "default": "America/Chicago",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes3/configs/sonarr",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/opt/volumes3/storage/tvShows",
+                    "container": "/movies"
+                },
+                {
+                    "bind": "/opt/volumes3/storage/downloads/tvShows",
+                    "container": "/downloads/"
+                }
+            ]
+        },
+        {
             "type": 3,
             "title": "Gluetun, qBittorrent, Jacket with Traefik",
             "description": "Deploys the Gluten Container. The qBittorrent and Jacket attach thir networks to the Gluden Container to use it as a VPN proxy. Designed to work with Traefik Proxy.",
