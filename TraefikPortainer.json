@@ -2,7 +2,7 @@
     "version": "2",
     "templates": [
         {
-            "type": 2,
+            "type": 3,
             "title": "Gluetun, qBittorrent, Jacket",
             "description": "Jacket and qBittorrent build to work with Gluetun VPN",
             "repository": {
