@@ -13,12 +13,7 @@
             "network": "proxy",
             "privileged": true,
             "restart_policy": "unless-stopped",
-            "ports": [
-				"8888:8888/tcp",
-                "8388:8388/tcp",
-                "8388:8388/udp",
-                "8000:8000/tcp"
-			],
+            "ports": ["8888:8888/tcp","8388:8388/tcp","8388:8388/udp","8000:8000/tcp"],
             "env": [
                 {
                     "default": "1000",
@@ -137,11 +132,7 @@
             "categories": ["Downloaders"],
             "network": "proxy",
             "restart_policy": "unless-stopped",
-            "ports": [
-                "6881:6881",
-                "6881:6881/udp",
-                "8080:8080"
-            ],
+            "ports": ["6881:6881","6881:6881/udp","8080:8080"],
             "env": [
                 {
                     "default": "8080",
@@ -186,9 +177,7 @@
             "categories": ["Downloaders, Tools"],
             "network": "proxy",
             "restart_policy": "unless-stopped",
-            "ports": [
-                "9117:9117"
-            ],
+            "ports": ["9117:9117/tcp"],
             "env": [
                 {
                     "default": true,
@@ -238,9 +227,7 @@
             "categories": ["Downloaders", "Video", "Movies"],
             "network": "proxy",
             "restart_policy": "unless-stopped",
-            "ports": [
-                "7878:7878"
-            ],
+            "ports": ["7878:7878/tcp"],
             "env": [
                 {
                     "default": "America/Chicago",
@@ -284,9 +271,7 @@
             "categories": ["Downloaders", "Video", "TV"],
             "network": "proxy",
             "restart_policy": "unless-stopped",
-            "ports": [
-                "8989:8989"
-            ],
+            "ports": ["8989:8989/tcp"],
             "env": [
                 {
                     "default": "America/Chicago",
