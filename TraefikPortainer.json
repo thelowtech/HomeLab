@@ -132,7 +132,7 @@
             "name": "qbluetun",
             "platform": "linux",
             "image": "ghcr.io/linuxserver/qbittorrent",
-            "logo": "https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/qbittorrent.png",
             "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent.",
             "categories": ["Downloaders"],
             "network": "proxy",
