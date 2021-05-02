@@ -1,0 +1,33 @@
+---
+version: "2"
+services:
+  plex:
+    image: ghcr.io/linuxserver/plex
+    container_name: Plex
+    ports:
+      - 32400:32400
+    environment:
+      - PUID=${PUID}
+      - PGID=${GUID}
+      - VERSION=docker
+      - TZ=${TZ}
+      - PLEX_CLAIM=${CLAIM} #optional
+    volumes:
+      - ${defaultStorage}/configs/plex:/config
+      - ${defaultStorage}/storage/tvShows:/tv
+      - ${defaultStorage}/storage/movies:/movies
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.plex.entrypoints=http"
+      - "traefik.http.routers.plex.middlewares=plex-https-redirect"
+      - "traefik.http.middlewares.plex-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.plex.rule=Host(`${FQDN}`)"
+      - "traefik.http.routers.plex-secure.entrypoints=https"
+      - "traefik.http.routers.plex-secure.rule=Host(`${FQDN}`)"
+      - "traefik.http.routers.plex-secure.tls=true"
+      - "traefik.http.routers.plex-secure.service=plex"
+      - "traefik.http.services.plex.loadbalancer.server.port=32400"
+    networks:
+      - proxy
+    restart: unless-stopped

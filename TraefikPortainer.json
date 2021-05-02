@@ -475,6 +475,50 @@
                     "name": "defaultStorage"
                 }
             ]
+        },
+        {
+            "type": 3,
+            "title": "Plex with Traefik",
+            "description": "Plex is a media playback system that makes it simple to enjoy your movies, TV shows, music, pictures, and internet-based content. Designed to work with Traefik Proxy.",
+            "categories": ["Video", "TV", "Movies"],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/plex.jpg",
+            "repository": {
+              "url": "https://github.com/thelowtech/HomeLab",
+              "stackfile": "TraefikPortainer/Stacks/PlexTraefik.yml"
+            },
+            "env": [
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "",
+                    "label": "Plex Claim ID",
+                    "name": "CLAIM"
+                },
+                {
+                    "default": "plex.home.default.local",
+                    "label": "Fully Qualified Domain Name",
+                    "name": "FQDN"
+                },
+                {
+                    "default": "/portainer",
+                    "label": "Default Configuration Storage Location",
+                    "name": "defaultStorage"
+                }
+            ]
         }
     ]
 }
