@@ -26,6 +26,8 @@ services:
       - "traefik.http.routers.sickchill-secure.tls=true"
       - "traefik.http.routers.sickchill-secure.service=sickchill"
       - "traefik.http.services.sickchill.loadbalancer.server.port=8081"
+    networks:
+      - proxy
     restart: unless-stopped
 networks:
   proxy:
