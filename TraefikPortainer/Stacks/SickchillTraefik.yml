@@ -12,7 +12,7 @@ services:
       - TZ=${TZ}
     volumes:
       - ${defaultStorage}/configs/sickchill:/config
-      - ${defaultStorage}/storage/downloads/tvShows:/downloads
+      - ${defaultStorage}/storage/downloads:/downloads
       - ${defaultStorage}/storage/tvShows:/tv
     labels:
       - "traefik.enable=true"

@@ -397,7 +397,7 @@
                     "container": "/tv"
                 },
                 {
-                    "bind": "/opt/volumes/storage/downloads/tvShows",
+                    "bind": "/opt/volumes/storage/downloads",
                     "container": "/downloads/"
                 }
             ]
