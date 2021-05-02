@@ -27,12 +27,12 @@
                 },
                 {
                     "default": "America/Chicago",
-                    "label": "TZ",
+                    "label": "Time Zone",
                     "name": "TZ"
                 },
                 {
                     "default": "private internet access",
-                    "label": "VPNSP",
+                    "label": "VPN Service Provider",
                     "name": "VPNSP",
                     "select": [
                         {
@@ -100,23 +100,23 @@
                 },
                 {
                     "default": "US Houston",
-                    "label": "REGION",
+                    "label": "Region",
                     "name": "REGION"
                 },
                 {
                     "default": "CHANGEME",
-                    "label": "OPENVPN_USER",
+                    "label": "VPN Username",
                     "name": "OPENVPN_USER"
                 },
                 {
                     "default": "CHANGEME",
-                    "label": "OPENVPN_PASSWORD",
+                    "label": "VPN Password",
                     "name": "OPENVPN_PASSWORD"
                 }
             ],
             "volumes": [
                 {
-                    "bind": "/opt/volumes3/config/gluten/",
+                    "bind": "/opt/volumes/config/gluten/",
                     "container": "/config"
                 }
             ]
@@ -136,12 +136,12 @@
             "env": [
                 {
                     "default": "8080",
-                    "label": "WEBUI_PORT",
+                    "label": "Web UI Port",
                     "name": "WEBUI_PORT"
                 },
                 {
                     "default": "America/Chicago",
-                    "label": "TZ",
+                    "label": "Timezone",
                     "name": "TZ"
                 },
                 {
@@ -157,11 +157,11 @@
             ],
             "volumes": [
                 {
-                    "bind": "/opt/volumes3/configs/qbittorrent",
+                    "bind": "/opt/volumes/configs/qbittorrent",
                     "container": "/config"
                 },
                 {
-                    "bind": "/opt/volumes3/storage/downloads",
+                    "bind": "/opt/volumes/storage/downloads",
                     "container": "/downloads"
                 }
             ]
@@ -181,17 +181,17 @@
             "env": [
                 {
                     "default": true,
-                    "label": "AUTO_UPDATE",
+                    "label": "Auto Update",
                     "name": "AUTO_UPDATE"
                 },
                 {
                     "default": "",
-                    "label": "RUN_OPTS",
+                    "label": "Additional Run Options",
                     "name": "RUN_OPTS"
                 },
                 {
                     "default": "America/Chicago",
-                    "label": "TZ",
+                    "label": "Time Zone",
                     "name": "TZ"
                 },
                 {
@@ -207,11 +207,11 @@
             ],
             "volumes": [
                 {
-                    "bind": "/opt/volumes3/configs/jackett",
+                    "bind": "/opt/volumes/configs/jackett",
                     "container": "/config"
                 },
                 {
-                    "bind": "/opt/volumes3/storage/downloads/blackhole",
+                    "bind": "/opt/volumes/storage/downloads/blackhole",
                     "container": "/downloads"
                 }
             ]
@@ -231,7 +231,7 @@
             "env": [
                 {
                     "default": "America/Chicago",
-                    "label": "TZ",
+                    "label": "Timezone",
                     "name": "TZ"
                 },
                 {
@@ -247,15 +247,15 @@
             ],
             "volumes": [
                 {
-                    "bind": "/opt/volumes3/configs/radarr",
+                    "bind": "/opt/volumes/configs/radarr",
                     "container": "/config"
                 },
                 {
-                    "bind": "/opt/volumes3/storage/movies",
+                    "bind": "/opt/volumes/storage/movies",
                     "container": "/movies"
                 },
                 {
-                    "bind": "/opt/volumes3/storage/downloads/movies",
+                    "bind": "/opt/volumes/storage/downloads/movies",
                     "container": "/downloads/"
                 }
             ]
@@ -275,7 +275,7 @@
             "env": [
                 {
                     "default": "America/Chicago",
-                    "label": "TZ",
+                    "label": "Timezone",
                     "name": "TZ"
                 },
                 {
@@ -291,16 +291,70 @@
             ],
             "volumes": [
                 {
-                    "bind": "/opt/volumes3/configs/sonarr",
+                    "bind": "/opt/volumes/configs/sonarr",
                     "container": "/config"
                 },
                 {
-                    "bind": "/opt/volumes3/storage/tvShows",
+                    "bind": "/opt/volumes/storage/tvShows",
+                    "container": "/tv"
+                },
+                {
+                    "bind": "/opt/volumes/storage/downloads/tvShows",
+                    "container": "/downloads/"
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "title": "Plex Media Server",
+            "name": "plex",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/plex",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/plex.jpg",
+            "description": "Plex is a media playback system that makes it simple to enjoy your movies, TV shows, music, pictures, and internet-based content",
+            "categories": ["Video", "TV", "Movies"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "ports": ["32400:32400/tcp"],
+            "env": [
+                {
+                    "default": "",
+                    "label": "Plex Claim",
+                    "name": "PLEX_CLAIM"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "Time Zone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "name": "VERSION",
+                    "default": "docker",
+                    "preset": true
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes/configs/plex",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/opt/volumes/storage/movies",
                     "container": "/movies"
                 },
                 {
-                    "bind": "/opt/volumes3/storage/downloads/tvShows",
-                    "container": "/downloads/"
+                    "bind": "/opt/volumes/storage/tvShows",
+                    "container": "/tvShows"
                 }
             ]
         },
@@ -329,22 +383,22 @@
                 },
                 {
                     "default": "America/Chicago",
-                    "label": "TZ",
+                    "label": "Timezone",
                     "name": "TZ"
                 },
                 {
                     "default": "US Houston",
-                    "label": "REGION",
+                    "label": "VPN Region",
                     "name": "REGION"
                 },
                 {
                     "default": "CHANGEME",
-                    "label": "OPENVPN_USER",
+                    "label": "VPN Username",
                     "name": "OPENVPN_USER"
                 },
                 {
                     "default": "CHANGEME",
-                    "label": "OPENVPN_PASSWORD",
+                    "label": "VPN Password",
                     "name": "OPENVPN_PASSWORD"
                 },
                 {

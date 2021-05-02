@@ -32,7 +32,7 @@ services:
       - WEBUI_PORT=8080
     volumes:
       - ${defaultStorage}/configs/qbittorrent:/config
-      - ${defaultStorage}/downloads:/downloads
+      - ${defaultStorage}/storage/downloads:/downloads
     depends_on:
       - "gluetun"
     network_mode: "service:gluetun"
@@ -46,7 +46,7 @@ services:
       - TZ=${TZ}
     volumes:
       - ${defaultStorage}/configs/jackett:/config
-      - ${defaultStorage}/downloads/blackhole:/downloads
+      - ${defaultStorage}/storage/downloads/blackhole:/downloads
     depends_on:
       - "gluetun"
     network_mode: "service:gluetun"
