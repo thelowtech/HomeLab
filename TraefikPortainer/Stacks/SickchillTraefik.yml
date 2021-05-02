@@ -4,8 +4,8 @@ services:
   sickchill:
     image: ghcr.io/linuxserver/sickchill
     container_name: sickchill
-    ports:
-      - 8081:8081
+    expose:
+      - "8081"
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -25,7 +25,6 @@ services:
       - "traefik.http.routers.sickchill-secure.rule=Host(`${FQDN}`)"
       - "traefik.http.routers.sickchill-secure.tls=true"
       - "traefik.http.routers.sickchill-secure.service=sickchill"
-      - "traefik.http.services.sickchill.loadbalancer.server.port=8081"
     restart: unless-stopped
 networks:
   proxy:
