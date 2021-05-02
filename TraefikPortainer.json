@@ -414,6 +414,11 @@
                             "value": "windscribe"
                         }
                     ]
+                },
+                {
+                    "default": "/portainer",
+                    "label": "defaultStorage",
+                    "name": "Default Configuration Storage Location"
                 }
             ]
         }
