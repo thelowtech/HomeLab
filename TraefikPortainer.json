@@ -417,8 +417,8 @@
                 },
                 {
                     "default": "/portainer",
-                    "label": "defaultStorage",
-                    "name": "Default Configuration Storage Location"
+                    "label": "Default Configuration Storage Location",
+                    "name": "defaultStorage"
                 }
             ]
         }
