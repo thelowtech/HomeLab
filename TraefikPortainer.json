@@ -360,6 +360,89 @@
         },
         {
             "type": 1,
+            "title": "Sickchill",
+            "name": "sickchill",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/sickchill",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/sickchill.png",
+            "description": "SickChill is an automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic: automatic torrent/nzb searching, downloading, and processing at the qualities you want.",
+            "categories": ["Downloaders", "Video", "TV"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "ports": ["8081:8081/tcp"],
+            "env": [
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes/configs/sickchill",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/opt/volumes/storage/tvShows",
+                    "container": "/tv"
+                },
+                {
+                    "bind": "/opt/volumes/storage/downloads/tvShows",
+                    "container": "/downloads/"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Sickchill With Traefik",
+            "description": "SickChill is an automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic: automatic torrent/nzb searching, downloading, and processing at the qualities you want.",
+            "categories": ["Downloaders", "Video", "TV"],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/sickchill.png",
+            "repository": {
+              "url": "https://github.com/thelowtech/HomeLab",
+              "stackfile": "TraefikPortainer/Stacks/SickchillTraefik.yml"
+            },
+            "env": [
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "plex.home.default.local",
+                    "label": "Fully Qualified Domain Name",
+                    "name": "FQDN"
+                },
+                {
+                    "default": "/portainer",
+                    "label": "Default Configuration Storage Location",
+                    "name": "defaultStorage"
+                }
+            ]
+        },
+        {
+            "type": 1,
             "title": "Sonarr",
             "name": "sonarr",
             "platform": "linux",
