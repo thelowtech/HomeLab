@@ -487,6 +487,45 @@
         },
         {
             "type": 3,
+            "title": "Sonarr With Traefik",
+            "description": "Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+            "categories": ["Downloaders", "Video", "TV"],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/sonarr.png",
+            "repository": {
+              "url": "https://github.com/thelowtech/HomeLab",
+              "stackfile": "TraefikPortainer/Stacks/SonarrTraefik.yml"
+            },
+            "env": [
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "sonarr.home.default.local",
+                    "label": "Fully Qualified Domain Name",
+                    "name": "FQDN"
+                },
+                {
+                    "default": "/portainer",
+                    "label": "Default Configuration Storage Location",
+                    "name": "defaultStorage"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Gluetun, qBittorrent, Jacket with Traefik",
             "description": "Deploys the Gluten Container. The qBittorrent and Jacket attach thir networks to the Gluden Container to use it as a VPN proxy. Designed to work with Traefik Proxy.",
             "note": "Requires an update to the Traefik config.yml see example on github https://github.com/thelowtech/HomeLab",
