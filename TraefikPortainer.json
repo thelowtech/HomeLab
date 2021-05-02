@@ -123,51 +123,6 @@
         },
         {
             "type": 1,
-            "title": "qBittorrent",
-            "name": "qbluetun",
-            "platform": "linux",
-            "image": "ghcr.io/linuxserver/qbittorrent",
-            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/qbittorrent.png",
-            "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent.",
-            "categories": ["Downloaders"],
-            "network": "proxy",
-            "restart_policy": "unless-stopped",
-            "ports": ["6881:6881/tcp","6881:6881/udp","8080:8080/tcp"],
-            "env": [
-                {
-                    "default": "8080",
-                    "label": "Web UI Port",
-                    "name": "WEBUI_PORT"
-                },
-                {
-                    "default": "America/Chicago",
-                    "label": "Timezone",
-                    "name": "TZ"
-                },
-                {
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "1000",
-                    "label": "PGID",
-                    "name": "PGID"
-                }
-            ],
-            "volumes": [
-                {
-                    "bind": "/opt/volumes/configs/qbittorrent",
-                    "container": "/config"
-                },
-                {
-                    "bind": "/opt/volumes/storage/downloads",
-                    "container": "/downloads"
-                }
-            ]
-        },
-        {
-            "type": 1,
             "title": "Jackett",
             "name": "jackett",
             "platform": "linux",
@@ -213,94 +168,6 @@
                 {
                     "bind": "/opt/volumes/storage/downloads/blackhole",
                     "container": "/downloads"
-                }
-            ]
-        },
-        {
-            "type": 1,
-            "title": "Radarr",
-            "name": "radarr",
-            "platform": "linux",
-            "image": "ghcr.io/linuxserver/radarr",
-            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/radarr.png",
-            "description": "Radarr is a movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.",
-            "categories": ["Downloaders", "Video", "Movies"],
-            "network": "proxy",
-            "restart_policy": "unless-stopped",
-            "ports": ["7878:7878/tcp"],
-            "env": [
-                {
-                    "default": "America/Chicago",
-                    "label": "Timezone",
-                    "name": "TZ"
-                },
-                {
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "1000",
-                    "label": "PGID",
-                    "name": "PGID"
-                }
-            ],
-            "volumes": [
-                {
-                    "bind": "/opt/volumes/configs/radarr",
-                    "container": "/config"
-                },
-                {
-                    "bind": "/opt/volumes/storage/movies",
-                    "container": "/movies"
-                },
-                {
-                    "bind": "/opt/volumes/storage/downloads/movies",
-                    "container": "/downloads/"
-                }
-            ]
-        },
-        {
-            "type": 1,
-            "title": "Sonarr",
-            "name": "sonarr",
-            "platform": "linux",
-            "image": "ghcr.io/linuxserver/sonarr",
-            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/sonarr.png",
-            "description": "Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
-            "categories": ["Downloaders", "Video", "TV"],
-            "network": "proxy",
-            "restart_policy": "unless-stopped",
-            "ports": ["8989:8989/tcp"],
-            "env": [
-                {
-                    "default": "America/Chicago",
-                    "label": "Timezone",
-                    "name": "TZ"
-                },
-                {
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "1000",
-                    "label": "PGID",
-                    "name": "PGID"
-                }
-            ],
-            "volumes": [
-                {
-                    "bind": "/opt/volumes/configs/sonarr",
-                    "container": "/config"
-                },
-                {
-                    "bind": "/opt/volumes/storage/tvShows",
-                    "container": "/tv"
-                },
-                {
-                    "bind": "/opt/volumes/storage/downloads/tvShows",
-                    "container": "/downloads/"
                 }
             ]
         },
@@ -399,6 +266,139 @@
                     "default": "/portainer",
                     "label": "Default Configuration Storage Location",
                     "name": "defaultStorage"
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "title": "qBittorrent",
+            "name": "qbluetun",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/qbittorrent",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/qbittorrent.png",
+            "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent.",
+            "categories": ["Downloaders"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "ports": ["6881:6881/tcp","6881:6881/udp","8080:8080/tcp"],
+            "env": [
+                {
+                    "default": "8080",
+                    "label": "Web UI Port",
+                    "name": "WEBUI_PORT"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes/configs/qbittorrent",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/opt/volumes/storage/downloads",
+                    "container": "/downloads"
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "title": "Radarr",
+            "name": "radarr",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/radarr",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/radarr.png",
+            "description": "Radarr is a movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.",
+            "categories": ["Downloaders", "Video", "Movies"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "ports": ["7878:7878/tcp"],
+            "env": [
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes/configs/radarr",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/opt/volumes/storage/movies",
+                    "container": "/movies"
+                },
+                {
+                    "bind": "/opt/volumes/storage/downloads/movies",
+                    "container": "/downloads/"
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "title": "Sonarr",
+            "name": "sonarr",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/sonarr",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/sonarr.png",
+            "description": "Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
+            "categories": ["Downloaders", "Video", "TV"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "ports": ["8989:8989/tcp"],
+            "env": [
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes/configs/sonarr",
+                    "container": "/config"
+                },
+                {
+                    "bind": "/opt/volumes/storage/tvShows",
+                    "container": "/tv"
+                },
+                {
+                    "bind": "/opt/volumes/storage/downloads/tvShows",
+                    "container": "/downloads/"
                 }
             ]
         },
