@@ -430,7 +430,7 @@
                     "name": "TZ"
                 },
                 {
-                    "default": "plex.home.default.local",
+                    "default": "sickchill.home.default.local",
                     "label": "Fully Qualified Domain Name",
                     "name": "FQDN"
                 },
