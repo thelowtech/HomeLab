@@ -185,7 +185,7 @@
                     "name": "TZ"
                 },
                 {
-                    "default": "overseerr.home.default.local",
+                    "default": "heimdall.home.default.local",
                     "label": "Fully Qualified Domain Name",
                     "name": "FQDN"
                 },
