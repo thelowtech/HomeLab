@@ -359,6 +359,45 @@
             ]
         },
         {
+            "type": 3,
+            "title": "Radarr With Traefik",
+            "description": "Radarr is a movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.",
+            "categories": ["Downloaders", "Video", "Movies"],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/radarr.png",
+            "repository": {
+              "url": "https://github.com/thelowtech/HomeLab",
+              "stackfile": "TraefikPortainer/Stacks/RadarrTraefik.yml"
+            },
+            "env": [
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "radarr.home.default.local",
+                    "label": "Fully Qualified Domain Name",
+                    "name": "FQDN"
+                },
+                {
+                    "default": "/portainer",
+                    "label": "Default Configuration Storage Location",
+                    "name": "defaultStorage"
+                }
+            ]
+        },
+        {
             "type": 1,
             "title": "Sickchill",
             "name": "sickchill",
