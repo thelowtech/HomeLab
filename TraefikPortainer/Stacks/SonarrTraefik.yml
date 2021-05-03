@@ -14,7 +14,7 @@ services:
     volumes:
       - ${defaultStorage}/configs/sonarr:/config
       - ${defaultStorage}/storage/tvShows:/tv
-      - ${defaultStorage}/downloads:/downloads
+      - ${defaultStorage}/storage/downloads:/downloads
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
