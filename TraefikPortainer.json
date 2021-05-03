@@ -283,7 +283,7 @@
             "volumes": [
                 {
                     "bind": "/opt/volumes/configs/overseerr",
-                    "container": "/config"
+                    "container": "/app/config"
                 }
             ]
         },
