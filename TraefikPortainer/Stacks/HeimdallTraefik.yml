@@ -24,7 +24,7 @@ services:
       - "traefik.http.routers.heimdall-secure.rule=Host(`${FQDN}`)"
       - "traefik.http.routers.heimdall-secure.tls=true"
       - "traefik.http.routers.heimdall-secure.service=heimdall"
-      - "traefik.http.services.heimdall.loadbalancer.server.port=8082"
+      - "traefik.http.services.heimdall.loadbalancer.server.port=8081"
     networks:
       - proxy
     restart: unless-stopped
