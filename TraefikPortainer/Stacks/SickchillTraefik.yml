@@ -4,8 +4,6 @@ services:
   sickchill:
     image: ghcr.io/linuxserver/sickchill
     container_name: sickchill
-    ports:
-      - 8081:8081
     environment:
       - PUID=${PUID}
       - PGID=${PGID}

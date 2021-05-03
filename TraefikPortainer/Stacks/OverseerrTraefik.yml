@@ -4,8 +4,6 @@ services:
   overseerr:
     image: sctx/overseerr
     container_name: overseerr
-    ports:
-      - 5055:5055/tcp
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
