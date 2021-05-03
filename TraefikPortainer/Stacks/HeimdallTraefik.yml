@@ -4,9 +4,6 @@ services:
   heimdall:
     image: ghcr.io/linuxserver/heimdall
     container_name: heimdall
-    ports:
-      - 8081:80/tcp
-      - 8082:443/tcp
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
