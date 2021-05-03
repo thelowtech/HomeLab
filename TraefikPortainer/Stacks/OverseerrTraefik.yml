@@ -5,7 +5,7 @@ services:
     image: sctx/overseerr
     container_name: overseerr
     ports:
-      - 8989:8989/tcp
+      - 5055:5055/tcp
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -24,7 +24,7 @@ services:
       - "traefik.http.routers.overseerr-secure.rule=Host(`${FQDN}`)"
       - "traefik.http.routers.overseerr-secure.tls=true"
       - "traefik.http.routers.overseerr-secure.service=overseerr"
-      - "traefik.http.services.overseerr.loadbalancer.server.port=8989"
+      - "traefik.http.services.overseerr.loadbalancer.server.port=5055"
     networks:
       - proxy
     restart: unless-stopped
