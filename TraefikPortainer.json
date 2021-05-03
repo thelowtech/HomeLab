@@ -123,6 +123,81 @@
         },
         {
             "type": 1,
+            "title": "Heimdall",
+            "name": "heimdall",
+            "platform": "linux",
+            "image": "ghcr.io/linuxserver/heimdall",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/heimdall.png",
+            "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way. Simplicity is the key to Heimdall. Why not use it as your browser start page? It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.",
+            "categories": ["Tools", "Web"],
+            "network": "proxy",
+            "restart_policy": "unless-stopped",
+            "ports": ["8081:80/tcp","8082:443"],
+            "env": [
+                {
+                    "default": "America/Chicago",
+                    "label": "Time Zone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "/opt/volumes/configs/heimdall",
+                    "container": "/config"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Heimdall With Traefik",
+            "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way. Simplicity is the key to Heimdall. Why not use it as your browser start page? It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.",
+            "categories": ["Tools", "Web", "Traefik"],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/thelowtech/HomeLab/master/Images/heimdall.png",
+            "repository": {
+              "url": "https://github.com/thelowtech/HomeLab",
+              "stackfile": "TraefikPortainer/Stacks/HeimdallTraefik.yml"
+            },
+            "env": [
+                {
+                    "default": "1000",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "1000",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "America/Chicago",
+                    "label": "Timezone",
+                    "name": "TZ"
+                },
+                {
+                    "default": "overseerr.home.default.local",
+                    "label": "Fully Qualified Domain Name",
+                    "name": "FQDN"
+                },
+                {
+                    "default": "/portainer",
+                    "label": "Default Configuration Storage Location",
+                    "name": "defaultStorage"
+                }
+            ]
+        },
+        {
+            "type": 1,
             "title": "Jackett",
             "name": "jackett",
             "platform": "linux",
