@@ -10,7 +10,7 @@ services:
       - TZ=${TZ}
       - LOG_LEVEL=${LOGLEVEL}
     volumes:
-      - ${defaultStorage}/configs/overseerr:/config
+      - ${defaultStorage}/configs/overseerr:/app/config
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
