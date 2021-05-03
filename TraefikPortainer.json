@@ -245,7 +245,7 @@
                     "name": "TZ"
                 },
                 {
-                    "default": "radarr.home.default.local",
+                    "default": "overseerr.home.default.local",
                     "label": "Fully Qualified Domain Name",
                     "name": "FQDN"
                 },
